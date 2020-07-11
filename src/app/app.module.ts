@@ -14,7 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LineChartComponent } from './graphs/line-chart/line-chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FontAwesomeModule } from '@fontawesome/angular-fontawesome';
 import { PieChartComponent } from './graphs/pie-chart/pie-chart.component';
 import { BarChartComponent } from './graphs/bar-chart/bar-chart.component';
 import { DoughnutChartComponent } from './graphs/doughnut-chart/doughnut-chart.component';
