@@ -1,0 +1,92 @@
+<div class="main-content">
+    <div class="container-fluid text-center">
+        <br>
+        <h1>INDIA COVID-19 UPDATE</h1>
+        <br>
+        <div class="row">
+            <div class="col-4">
+                <div class="card mx-auto" style="width: 10rem;">
+                    <div class="card-header card-header-danger card-header-icon">
+                        <p class="card-category text-danger">Confirmed <br /> <b></b></p>
+                        <h4 class="card-title">{{total_today?.confirmed | number:'':'en-IN'}}</h4>
+                        <h4 class="card-title text-danger"><i class="fa fa-caret-up" aria-hidden="true"></i>
+                            {{total_today?.deltaconfirmed}}</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card mx-auto" style="width: 10rem;">
+                    <div class="card-header card-header-icon">
+                        <p class="card-category">Active <br /> <b></b></p>
+                        <h4 class="card-title">{{total_today?.active | number:'':'en-IN'}}</h4>
+                        <h4 class="card-title"><i class="fa " aria-hidden="true"></i>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card mx-auto" style="width: 10rem;">
+                    <div class="card-header card-header-icon">
+                        <p class="card-category text-success">Recovered <br /> <b></b></p>
+                        <h4 class="card-title">{{total_today?.recovered | number:'':'en-IN'}} </h4>
+                        <h4 class="card-title text-success"><i class="fa fa-caret-up" aria-hidden="true"></i>
+                            {{total_today?.deltarecovered}}</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header ">
+                        <h3 class="card-title">Daily Stats
+                        </h3>
+                    </div>
+                    <app-bar-chart>
+                    </app-bar-chart>
+                </div>
+            </div>
+        </div>
+        <br> <br>
+        <div class="row">
+            <div class="col-6 ">
+                <div class="card">
+                    <div class="card-header ">
+                        <h3 class="card-title">Active vs Recovered vs Deceased (Total)
+                        </h3>
+                    </div>
+                    <app-line-chart>
+                    </app-line-chart>
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div class="card ">
+                    <div class="card-header ">
+                        <h3 class="card-title">Total Cases Statewise
+                        </h3>
+                    </div>
+                    <app-pie-chart></app-pie-chart>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="row ">
+            <div class="col-6 mx-auto ">
+                <div class="card">
+                    <div class="card-header ">
+                        <h3 class="card-title">Total Cases Status wise
+                        </h3>
+                    </div>
+                    <app-doughnut-chart>
+
+                    </app-doughnut-chart>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        
+        
+    </div>
+</div>

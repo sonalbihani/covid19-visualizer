@@ -1,0 +1,48 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <br>
+        <div class="text-center">
+            <h1>INDIA COVID-19 UPDATE</h1>
+        </div>
+        <br>
+        <div class="row">
+
+            <div class="col-12 table-responsive">
+                <div class="card">
+                    <div class="card-header card-header-warning">
+                        <h2 class="card-title">Statewise Stats
+                            <span class="pull-right"><i class="fa fa-table"></i></span>
+                        </h2>
+                    </div>
+                    <table class="table table-hover" matSort (matSortChange)="sortStatesData($event)">
+                        <tr class=" text-warning">
+                            <th mat-sort-header="state">State</th>
+                            <th mat-sort-header="confirmed">Confirmed</th>
+                            <th mat-sort-header="active">Active</th>
+                            <th mat-sort-header="recovered">Recovered</th>
+                            <th mat-sort-header="deaths">Deaths</th>
+                        </tr>
+                        <tr *ngFor='let state of sortedStates'>
+                            <td><a routerLink="/state-details/{{state.state}}" >{{state.state}}</a></td>
+                            <td>
+                                <p><span class="text-danger"><i class="fa fa-caret-up" aria-hidden="true"></i>
+                                        {{state.deltaconfirmed}} </span>{{state.confirmed | number:'':'en-IN'}}</p>
+                            </td>
+                            <td>{{state.active | number:'':'en-IN'}}</td>
+                            <td>
+                                <p><span class="text-success"><i class="fa fa-caret-up" aria-hidden="true"></i>
+                                        {{state.deltarecovered}} </span>{{state.recovered | number:'':'en-IN'}}</p>
+                            </td>
+                            <td>
+                                <p><span class="text-info"><i class="fa fa-caret-up" aria-hidden="true"></i>
+                                        {{state.deltadeaths}} </span>{{state.deaths | number:'':'en-IN'}}</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

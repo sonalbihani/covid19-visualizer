@@ -1,0 +1,12 @@
+<div class="chart-wrapper"  *ngIf="chartReady" >
+    <br>
+    <canvas baseChart  
+        [datasets]="lineChartData" 
+        [labels]="lineChartLabels" 
+        [options]="lineChartOptions"
+        [colors]="lineChartColors" 
+        [legend]="lineChartLegend" 
+        [chartType]="lineChartType" 
+        [plugins]="lineChartPlugins" style="padding: 5px !important">
+    </canvas>
+</div>
