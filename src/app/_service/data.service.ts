@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { catchError, map, tap,retry, shareReplay } from 'rxjs/operators';
-import {API} from 'src/app/models/API'
-import {CovidData, DistrictWise} from 'src/app/models/model'
+import {API} from 'src/app/api'
+import {CovidData, DistrictWise} from 'src/app/model'
 @Injectable({
   providedIn: 'root'
 })

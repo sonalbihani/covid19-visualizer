@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import { AuthService } from '../_service/auth.service';
 import { Router } from '@angular/router';
-import {User} from '../models/user'
+import {User} from '../user'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

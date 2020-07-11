@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CasesTimeSeries,Statewise, DistrictData} from '../models/model';
+import {CasesTimeSeries,Statewise, DistrictData} from '../model';
 import {DataService} from '../_service/data.service'
 import {ActivatedRoute, Router} from '@angular/router'
 import { Sort } from '@angular/material/sort';
