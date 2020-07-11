@@ -13,6 +13,7 @@ export class NavbarComponent implements OnInit {
 
     constructor(
         private router: Router,private authService: AuthService) {
+          this.authService.currentUser.subscribe(x => this.currentUser = x);
     }
 
     logout() {
