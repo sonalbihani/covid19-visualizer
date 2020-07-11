@@ -6,17 +6,17 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item" id="list-id">
+          <li class="nav-item" id="list-id" *ngIf= 'token'>
             <a class="nav-link" routerLink = "/">Home</a>
           </li>
-          <li class="nav-item" id="create-id">
+          <li class="nav-item" id="create-id" *ngIf= 'token'>
             <a class="nav-link" routerLink = "/state-wise">Statewise</a>
           </li>
      
-          <li class="nav-item" id="login-id">
+          <li class="nav-item" id="login-id" *ngIf= '!token'>
             <a class="nav-link" routerLink = "/login">Login</a>
           </li>
-          <li class="nav-item" id="reg-id">
+          <li class="nav-item" id="reg-id" *ngIf= '!token'>
             <a class="nav-link" routerLink = "/register">Register</a>
           </li>
           <li class="nav-item" id="out-id" *ngIf= 'token'>

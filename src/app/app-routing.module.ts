@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -25,17 +25,17 @@ const routes: Routes = [
   {
     path: 'state-wise',
     component: StateWiseComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'state-details/:state',
     component: StateDetailsComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
-  // {
-  //   path: '**',
-  //   redirectTo: ''
-  // }
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ]
 
 @NgModule({

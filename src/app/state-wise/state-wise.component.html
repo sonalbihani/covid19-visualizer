@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 <div class="main-content">
     <div class="container-fluid">
         <br>
@@ -26,16 +27,16 @@
                             <td><a routerLink="/state-details/{{state.state}}" >{{state.state}}</a></td>
                             <td>
                                 <p><span class="text-danger"><i class="fa fa-caret-up" aria-hidden="true"></i>
-                                        {{state.deltaconfirmed}} </span>{{state.confirmed | number:'':'en-IN'}}</p>
+                                        {{state.deltaconfirmed}} </span><br>{{state.confirmed | number:'':'en-IN'}}</p>
                             </td>
                             <td>{{state.active | number:'':'en-IN'}}</td>
                             <td>
                                 <p><span class="text-success"><i class="fa fa-caret-up" aria-hidden="true"></i>
-                                        {{state.deltarecovered}} </span>{{state.recovered | number:'':'en-IN'}}</p>
+                                        {{state.deltarecovered}} </span><br>{{state.recovered | number:'':'en-IN'}}</p>
                             </td>
                             <td>
                                 <p><span class="text-info"><i class="fa fa-caret-up" aria-hidden="true"></i>
-                                        {{state.deltadeaths}} </span>{{state.deaths | number:'':'en-IN'}}</p>
+                                        {{state.deltadeaths}} </span><br>{{state.deaths | number:'':'en-IN'}}</p>
                             </td>
                         </tr>
                     </table>

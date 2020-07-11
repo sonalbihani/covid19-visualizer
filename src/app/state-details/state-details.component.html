@@ -1,8 +1,14 @@
+<app-navbar></app-navbar>
 <div class="main-content">
     <div class="container-fluid">
         <br>
         <div class="text-center">
             <h1>INDIA COVID-19 UPDATE</h1>
+        </div>
+        <br>
+        <div class="container text-left">
+            <a href="#" routerLink="/state-wise"><< Go back to State Wise Details</a>
+            <br>
         </div>
         <br>
         <div class="row">
@@ -27,19 +33,19 @@
                             </td>
                             <td>
                                 <p><span class="text-danger"><i class="fa fa-caret-up" aria-hidden="true"></i> {{district?.delta.confirmed}} 
-                                    </span>{{district?.confirmed | number:'':'en-IN'}}</p>
+                                    </span><br>{{district?.confirmed | number:'':'en-IN'}}</p>
                             </td>
                             <td>
                                 <p><span class="text-info">
-                                    </span>{{district?.active | number:'':'en-IN'}}</p>
+                                    </span><br>{{district?.active | number:'':'en-IN'}}</p>
                             </td>
                             <td>
                                 <p><span class="text-success"><i class="fa fa-caret-up" aria-hidden="true"></i>  {{district?.delta.recovered}}
-                                    </span>{{district?.recovered | number:'':'en-IN'}}</p>
+                                    </span><br>{{district?.recovered | number:'':'en-IN'}}</p>
                             </td>
                             <td>
                                 <p><span class="text-warning"><i class="fa fa-caret-up" aria-hidden="true"></i>  {{district?.delta.deceased}}
-                                    </span>{{district?.deceased | number:'':'en-IN'}}</p>
+                                    </span><br>{{district?.deceased | number:'':'en-IN'}}</p>
                             </td>
                         </tr>
                     </table>
