@@ -5,33 +5,47 @@
         <h1>INDIA COVID-19 UPDATE</h1>
         <br>
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card mx-auto" style="width: 10rem;">
                     <div class="card-header card-header-danger card-header-icon">
-                        <p class="card-category text-danger">Confirmed <br /> <b></b></p>
-                        <h4 class="card-title">{{total_today?.confirmed | number:'':'en-IN'}}</h4>
+                        <p class="card-category " style="font-weight: bold;">Confirmed <br /> <b></b></p>
                         <h4 class="card-title text-danger"><i class="fa fa-caret-up" aria-hidden="true"></i>
                             {{total_today?.deltaconfirmed}}</h4>
+                        <h4 class="card-title">{{total_today?.confirmed | number:'':'en-IN'}}</h4>
+                        
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card mx-auto" style="width: 10rem;">
                     <div class="card-header card-header-icon">
-                        <p class="card-category">Active <br /> <b></b></p>
+                        <p class="card-category" style="font-weight: bold;">Active <br /> <b></b></p>
+                        <h4 class="card-title text-success"><i class="fa" aria-hidden="true"></i>
+                            </h4>
                         <h4 class="card-title">{{total_today?.active | number:'':'en-IN'}}</h4>
-                        <h4 class="card-title"><i class="fa " aria-hidden="true"></i>
-                        </h4>
+                        
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div class="col-3">
                 <div class="card mx-auto" style="width: 10rem;">
                     <div class="card-header card-header-icon">
-                        <p class="card-category text-success">Recovered <br /> <b></b></p>
-                        <h4 class="card-title">{{total_today?.recovered | number:'':'en-IN'}} </h4>
+                        <p class="card-category" style="font-weight: bold;">Recovered <br /> <b></b></p>
                         <h4 class="card-title text-success"><i class="fa fa-caret-up" aria-hidden="true"></i>
                             {{total_today?.deltarecovered}}</h4>
+                        <h4 class="card-title">{{total_today?.recovered | number:'':'en-IN'}} </h4>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card mx-auto" style="width: 10rem;">
+                    <div class="card-header card-header-icon">
+                        <p class="card-category" style="font-weight: bold;">Deceased <br /> <b></b></p>
+                        <h4 class="card-title text-danger"><i class="fa fa-caret-up" aria-hidden="true"></i>
+                            {{total_today?.deltadeaths}}</h4>
+                        <h4 class="card-title">{{total_today?.deaths | number:'':'en-IN'}} </h4>
+                        
                     </div>
                 </div>
             </div>

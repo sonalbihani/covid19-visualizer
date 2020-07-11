@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
     this.dataService.getDailyData().subscribe((response) => {
     this.total_today = response.statewise.find((v) => v.state === this.stateName);
     this.timeSeries = response.cases_time_series;
+    console.log(this.total_today);
     // this.load_graphs();
     })
   }
