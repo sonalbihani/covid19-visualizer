@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                   console.log(data);
+                  alert("Logged in!");
                   localStorage.setItem("user-token",data["user-token"]);
                     this.router.navigate([this.returnUrl]);
                     
