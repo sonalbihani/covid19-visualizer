@@ -9,48 +9,44 @@ import { User } from '../user'
 export class AuthService {
   redirectUrl: string;
   errorData: {};
-  public currentUser: Observable<User>;
-  private currentUserSubject: BehaviorSubject<User>;
+  // public currentUser: Observable<User>;
+  // private currentUserSubject: BehaviorSubject<User>;
   // serverUrl = 'https://zen-user-api.herokuapp.com/users/'
   serverUrl ='https://api.backendless.com/1E43DBD5-EDAF-58B2-FFD9-43A41A8B0F00/04B19478-7A6E-494B-87F9-B0F24A1BE8A9/data/Users';
+  
   register(user: User) {
     console.log(user);
     return this.http.post(`${this.serverUrl}`, user);
   }
   constructor(private http: HttpClient) {
-    this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
-    this.currentUser = this.currentUserSubject.asObservable();
-  }
-
-  public get currentUserValue(): User {
-    return this.currentUserSubject.value;
+    // this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
+    // this.currentUser = this.currentUserSubject.asObservable();
   }
   login(email: string, password: string) {
-    return this.http.post<any>(`${this.serverUrl}authenticate`, { email: email, password: password })
-      .pipe(map(user => {
-          console.log(user);
-          localStorage.setItem('currentUser', JSON.stringify(user));
-          this.currentUserSubject.next(user);
-          return user;
-      }),
-        catchError(this.handleError)
-      );
+    return this.http.post<any>('https://api.backendless.com/1E43DBD5-EDAF-58B2-FFD9-43A41A8B0F00/04B19478-7A6E-494B-87F9-B0F24A1BE8A9/users/login', { "login": email, "password": password })
+      // .pipe(map(user => {
+          // console.log(user);
+          // localStorage.setItem('currentUser', JSON.stringify(user));
+          // this.currentUserSubject.next(user);
+          // return user;
+      // }),
+        // catchError(this.handleError)
+      // );
   }
   isLoggedIn() {
-    if (localStorage.getItem('currentUser')) {
+    if (localStorage.getItem('user-token')) {
       return true;
     }
     return false;
   }
 
   getAuthorizationToken() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    return currentUser.token;
+    return JSON.parse(localStorage.getItem('user-token'));
   }
 
   logout() {
-    localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(null);
+    localStorage.removeItem('user-token');
+    // this.currentUserSubject.next(null);
   }
 
   private handleError(error: HttpErrorResponse) {

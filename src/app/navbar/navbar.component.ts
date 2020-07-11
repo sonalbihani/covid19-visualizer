@@ -9,11 +9,11 @@ import { AuthService } from 'src/app/_service/auth.service';
 })
 export class NavbarComponent implements OnInit {
 
-  currentUser: User;
+  token = localStorage.getItem('user-token');
 
     constructor(
         private router: Router,private authService: AuthService) {
-          this.authService.currentUser.subscribe(x => this.currentUser = x);
+          
     }
 
     logout() {

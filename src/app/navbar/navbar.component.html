@@ -19,7 +19,7 @@
           <li class="nav-item" id="reg-id">
             <a class="nav-link" routerLink = "/register">Register</a>
           </li>
-          <li class="nav-item" id="out-id">
+          <li class="nav-item" id="out-id" *ngIf= 'token'>
             <a class="nav-link" (click) = "logout()">Logout</a>
           </li>
         </ul>
