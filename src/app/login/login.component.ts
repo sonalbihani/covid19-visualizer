@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
                     
                 },
                 error => {
+                    alert("Invalid Credentials");
                     this.loading = false;
                 });
   }

@@ -75,27 +75,27 @@ export class BarChartComponent implements OnInit {
       }  
       this.con_series = this.seriesValue.confirmed.series;
     this.rec_series = this.seriesValue.recovered.series;
+    
     this.death_series = this.seriesValue.deceased.series;
     this.xAxis = this.seriesValue.confirmed.xAxis;
-    
     this.barChartData = [
       {
-        data: this.con_series.data,
+        data: this.con_series.data.slice(this.con_series.data.length-120),
         label: 'Confirmed',
-        stack: 'a'
+        // stack: 'a'
       },
       {
-        data: this.rec_series.data,
+        data: this.rec_series.data.slice(this.rec_series.data.length-120),
         label:  'Recovered',
-        stack: 'a'
+        // stack: 'a'
       },
       {
-        data: this.death_series.data,
+        data: this.death_series.data.slice(this.death_series.data.length-120),
         label:  'Deceased',
-        stack: 'a'
+        // stack: 'a'
       }
     ];
-    this.barChartLabels = this.xAxis? this.xAxis : [];
+    this.barChartLabels = this.xAxis? this.xAxis.slice(this.xAxis.length-120) : [];
       this.chartReady = true;
       });
    
