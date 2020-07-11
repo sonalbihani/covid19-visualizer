@@ -11,10 +11,11 @@ export class AuthService {
   errorData: {};
   public currentUser: Observable<User>;
   private currentUserSubject: BehaviorSubject<User>;
-  serverUrl = 'https://zen-user-api.herokuapp.com/users/';
+  // serverUrl = 'https://zen-user-api.herokuapp.com/users/'
+  serverUrl ='https://api.backendless.com/1E43DBD5-EDAF-58B2-FFD9-43A41A8B0F00/04B19478-7A6E-494B-87F9-B0F24A1BE8A9/data/Users';
   register(user: User) {
     console.log(user);
-    return this.http.post(`${this.serverUrl}register`, user);
+    return this.http.post(`${this.serverUrl}`, user);
   }
   constructor(private http: HttpClient) {
     this.currentUserSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('currentUser')));
@@ -27,12 +28,10 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http.post<any>(`${this.serverUrl}authenticate`, { email: email, password: password })
       .pipe(map(user => {
-        if (user && user.token) {
           console.log(user);
           localStorage.setItem('currentUser', JSON.stringify(user));
           this.currentUserSubject.next(user);
           return user;
-        }
       }),
         catchError(this.handleError)
       );
