@@ -1,5 +1,7 @@
 # Covid19Visualizer
 
+A dashboard for reporting Covid-19 cases in India
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.10.
 
 ## Development server
